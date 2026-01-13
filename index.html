@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقرير اليومي لمقدم خدمة دعم التميز المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>التقرير اليومي لمقدم خدمة دعم التميز المدرسي</h1>
+            <p class="subtitle">نموذج 3</p>
+        </header>
+
+        <form id="dailyReportForm">
+            <!-- القسم الأول: المعلومات الأساسية -->
+            <section class="form-section">
+                <h2>المعلومات الأساسية</h2>
+                
+                <div class="form-group">
+                    <label for="sector">القطاع:</label>
+                    <select id="sector" name="sector" required>
+                        <option value="">اختر القطاع</option>
+                        <option value="الشرقية">الشرقية</option>
+                        <option value="الغربية">الغربية</option>
+                        <option value="الوسطى">الوسطى</option>
+                        <option value="الشمالية">الشمالية</option>
+                        <option value="الجنوبية">الجنوبية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">التاريخ:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dayOfWeek">اليوم:</label>
+                    <select id="dayOfWeek" name="dayOfWeek" required>
+                        <option value="">اختر اليوم</option>
+                        <option value="الأحد">الأحد</option>
+                        <option value="الاثنين">الاثنين</option>
+                        <option value="الثلاثاء">الثلاثاء</option>
+                        <option value="الأربعاء">الأربعاء</option>
+                        <option value="الخميس">الخميس</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="week">الأسبوع:</label>
+                    <input type="text" id="week" name="week" placeholder="مثال: الأسبوع الأول" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="supervisor">المشرف:</label>
+                    <input type="text" id="supervisor" name="supervisor" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task">المهمة:</label>
+                    <input type="text" id="task" name="task" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="schoolNames">أسماء المدارس:</label>
+                    <textarea id="schoolNames" name="schoolNames" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">نوع الخدمة:</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="">اختر نوع الخدمة</option>
+                        <option value="زيارة ميدانية">زيارة ميدانية</option>
+                        <option value="استشارة عن بعد">استشارة عن بعد</option>
+                        <option value="ورشة عمل">ورشة عمل</option>
+                        <option value="متابعة">متابعة</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- القسم الثاني: المرحلة الدراسية -->
+            <section class="form-section">
+                <h2>المرحلة الدراسية</h2>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="stage" value="ابتدائي"> ابتدائي</label>
+                    <label><input type="checkbox" name="stage" value="متوسط"> متوسط</label>
+                    <label><input type="checkbox" name="stage" value="ثانوي"> ثانوي</label>
+                </div>
+            </section>
+
+            <!-- القسم الثالث: نوع المدرسة -->
+            <section class="form-section">
+                <h2>نوع المدرسة</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="schoolType" value="حكومي" required> حكومي</label>
+                    <label><input type="radio" name="schoolType" value="أهلي"> أهلي</label>
+                </div>
+            </section>
+
+            <!-- القسم الرابع: تفعيل منصة مدرستي -->
+            <section class="form-section">
+                <h2>تفعيل منصة مدرستي</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="platform" value="نعم" required> نعم</label>
+                    <label><input type="radio" name="platform" value="لا"> لا</label>
+                </div>
+            </section>
+
+            <!-- القسم الخامس: جداول التقييم -->
+            <section class="form-section">
+                <h2>جداول التقييم</h2>
+                
+                <!-- جدول نواتج التعلم والتدريس والنشاط -->
+                <div class="table-container">
+                    <h3>نواتج التعلم والتدريس والنشاط</h3>
+                    <table id="learningTable">
+                        <thead>
+                            <tr>
+                                <th>المجال</th>
+                                <th>النقاط</th>
+                                <th>الملاحظات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>التخطيط</td>
+                                <td><input type="number" name="planning_points" min="0" max="100"></td>
+                                <td><input type="text" name="planning_notes"></td>
+                            </tr>
+                            <tr>
+                                <td>التنفيذ</td>
+                                <td><input type="number" name="execution_points" min="0" max="100"></td>
+                                <td><input type="text" name="execution_notes"></td>
+                            </tr>
+                            <tr>
+                                <td>التقويم</td>
+                                <td><input type="number" name="evaluation_points" min="0" max="100"></td>
+                                <td><input type="text" name="evaluation_notes"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- جدول إمكانات التقييم -->
+                <div class="table-container">
+                    <h3>إمكانات التقييم</h3>
+                    <table id="resourcesTable">
+                        <thead>
+                            <tr>
+                                <th>العنصر</th>
+                                <th>متوفر</th>
+                                <th>غير متوفر</th>
+                                <th>ملاحظات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>المعامل والمختبرات</td>
+                                <td><input type="radio" name="labs" value="متوفر"></td>
+                                <td><input type="radio" name="labs" value="غير متوفر"></td>
+                                <td><input type="text" name="labs_notes"></td>
+                            </tr>
+                            <tr>
+                                <td>التقنيات الحديثة</td>
+                                <td><input type="radio" name="tech" value="متوفر"></td>
+                                <td><input type="radio" name="tech" value="غير متوفر"></td>
+                                <td><input type="text" name="tech_notes"></td>
+                            </tr>
+                            <tr>
+                                <td>المكتبة</td>
+                                <td><input type="radio" name="library" value="متوفر"></td>
+                                <td><input type="radio" name="library" value="غير متوفر"></td>
+                                <td><input type="text" name="library_notes"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- القسم السادس: أوقات الحضور والانصراف -->
+            <section class="form-section">
+                <h2>أوقات الحضور والانصراف</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="arrivalTime">وقت الحضور:</label>
+                        <input type="time" id="arrivalTime" name="arrivalTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departureTime">وقت الانصراف:</label>
+                        <input type="time" id="departureTime" name="departureTime" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- القسم السابع: حقول إضافية -->
+            <section class="form-section">
+                <h2>معلومات إضافية</h2>
+                
+                <div class="form-group">
+                    <label for="initiatives">المبادرات:</label>
+                    <textarea id="initiatives" name="initiatives" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiences">الخبرات:</label>
+                    <textarea id="experiences" name="experiences" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="recommendations">التوصيات:</label>
+                    <textarea id="recommendations" name="recommendations" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggestions">المقترحات:</label>
+                    <textarea id="suggestions" name="suggestions" rows="3"></textarea>
+                </div>
+            </section>
+
+            <!-- أزرار التحكم -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">حفظ البيانات</button>
+                <button type="button" id="exportExcel" class="btn btn-success">تصدير إلى Excel</button>
+                <button type="button" id="exportPDF" class="btn btn-danger">طباعة PDF</button>
+                <button type="reset" class="btn btn-secondary">إعادة تعيين</button>
+            </div>
+        </form>
+
+        <!-- جدول البيانات المحفوظة -->
+        <section class="saved-data-section">
+            <h2>البيانات المحفوظة</h2>
+            <div id="savedDataContainer">
+                <table id="savedDataTable">
+                    <thead>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>القطاع</th>
+                            <th>المشرف</th>
+                            <th>المدارس</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="savedDataBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
